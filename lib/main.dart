@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+
   Widget build(BuildContext context) {
-    Widget titleSection = Container(
+  /*  Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
@@ -57,13 +58,27 @@ class MyApp extends StatelessWidget {
         _buildButtonColumn(color, Icons.share, 'SHARE'),
       ],
     );
-
+*/
     Widget textSection = const Padding(
       padding: EdgeInsets.all(24.0),
       child: Text(
-        '\nThe 643Pest mobile app is no longer supported.'
-        'To submit new pest reports, please visit 643pest.org or call 643-PEST.\n\n'
-        'Contact us at helpdesk@643pest.org\n with any questions.',
+        '\nThe 643Pest mobile app is no longer supported.',
+        softWrap: true,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.normal,
+          color: Colors.white,
+        ),
+      ),
+    );
+
+
+    Widget textSection2= const Padding(
+      padding: EdgeInsets.all(24.0),
+      child: Text(
+            'Submit pest reports to 643pest.org or call 643-PEST.\n\n'
+            'Contact us at helpdesk@643pest.org\n with any questions.',
         softWrap: true,
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -114,6 +129,7 @@ class MyApp extends StatelessWidget {
               ),
               textSection,
               textButton,
+              textSection2,
               Image.asset(
                 'images/miconia_snake_ant.png',
                 fit: BoxFit.cover,
